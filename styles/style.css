@@ -1,0 +1,300 @@
+   
+/* Fuente de letra  */
+@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
+
+/*   */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body{
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    position: relative;
+}
+
+
+/* Cabecera Body */
+header{
+    background: #FDFC47;   
+    background: linear-gradient(to right, #24FE41, #FDFC47); 
+    height: auto;
+    padding: 48px;
+    width: 100%;
+}
+
+
+nav{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+nav a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.contenedor{
+    width: 95%;
+    max-width:1200px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;  
+}
+
+#header img{
+    display: block;
+    height: 300px;
+    object-fit: cover;
+    width: auto;
+    animation: moverArriba 500ms ease-in;
+}
+
+.textos{
+    width: 50%;
+    color: #fff;
+}
+
+.textos h1{
+    font-size: 55px;
+    animation: moverDerecha 500ms ease-in;
+    margin-bottom: 5%;
+}
+
+.textos h2{
+    font-size: 30px;
+    animation: moverIzquierda 500ms ease-in;
+}
+
+.icono{
+    display: block;
+    width: 25%;
+    animation: moverIzquierda 500ms ease-in;
+    z-index: 1000;
+	color: #fff;
+}
+.icono a {
+    margin-right: 1%;
+    display: inline-block;
+    padding: 2%;
+    background-color: #fff3;
+    text-transform: uppercase;
+}
+.icono a:hover {
+    border: 1px solid #fff ;
+}
+.uno{
+    -webkit-clip-path: circle(0% at 0 0);
+    clip-path: circle(0% at 0 0);
+}
+
+
+.wave{
+    height:100px ;
+    width: 100%;
+    margin-top: -2;
+    background: #FDFC47;  
+    background: -webkit-linear-gradient(to right, #24FE41, #FDFC47);  
+    background: linear-gradient(to right, #24FE41, #FDFC47); 
+     
+}
+.botones-enlaces {
+    margin-top: -7%;
+    display: flex;
+    justify-content:center;
+    animation: moverIzquierda 600ms ease-in;
+
+}
+#tortuga {
+    background-image: url(../imagenes/tortuga3.jpg);
+    background-position: center;
+    margin-left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cocodrilo {
+    background-image: url(../imagenes/cocodrilo1.jpg);
+    background-position-y: -60px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin:content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.botones-enlaces > div{
+    width: 550px;
+    height: 100px;
+    border-radius: 100px;
+    border: 5px solid #24FE41;
+}
+.botones-enlaces > div a {
+    font-family: 'Wallpoet', cursive;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc3;
+    text-align: center;
+    padding-top: 5%;
+    font-size: 40px;
+    color: rgb(14, 212, 63);
+}
+.botones-enlaces > div a:hover {
+    background-color: #cccc;
+    border-radius: 100px;
+}
+footer {
+    background: #24fe41;
+    background: radial-gradient(circle farthest-side at left center, #24fe41 50%, #fdfc47 100%);
+    background: -webkit-radial-gradient(circle farthest-side at left center, #24fe41 50%, #fdfc47 100%);
+    background: -moz-radial-gradient(circle farthest-side at left center, #24fe41 50%, #fdfc47 100%);
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    font-weight: bolder;
+    text-align: center;
+}
+/* Animaciones */
+@keyframes moverIzquierda{
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100%{
+        opacity:1;
+        transform: translate(0);
+    }
+}
+
+
+@keyframes moverDerecha{
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    50% {
+        opacity: 0.3;
+    }
+
+    100%{
+        opacity:1;
+        transform: translate(0);
+    }
+}
+
+
+@keyframes moverArriba{
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100%{
+        opacity:1;
+        transform: translate(0);
+    }
+}
+
+
+@media screen and (max-width:1000px){
+    #header img{
+        height: -1%;
+    }
+    .botones-enlaces {
+        margin-top: -9%;
+    }
+    .botones-enlaces div a {
+        font-size: 37;
+    }
+    .wave {
+        margin-top: -3%
+    }
+    .textos h1 {
+        font-size: 37px;
+    }
+    .textos h2 {
+        font-size: 27px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    #header {
+        height: 500px;
+    }
+    #header img{
+        width: 50%;
+        height: auto;
+        object-fit: cover;
+        margin-top: 10%;
+    }
+    #header nav {
+        width: 100%;
+    }
+    #header nav a {
+        font-size: 20px;
+        padding: 1%;
+    }
+    .botones-enlaces {
+        display: flex;
+        margin-top: -35%;
+        flex-direction: column;
+    }
+    .botones-enlaces > div {
+        width: 100%;
+    }
+    .botones-enlaces div a {
+        font-size: 35px;
+    }
+    #tortuga {
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+    .textos {
+        margin-top: 5%;
+    }
+    .textos h1 {
+        font-size: 35px;
+    }
+    .textos h2 {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #header img {
+        width: 55%;
+    }
+    .textos {
+        margin-top: 20%;
+        width: 100%;
+    }
+    .textos h2 {
+        font-size: 15px;
+    }
+    .botones-enlaces {
+        margin-top: -50%;
+    }
+    
+    .botones-enlaces div a {
+        font-size: 37px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .botones-enlaces {
+        margin-top: -70%;
+    }
+    .botones-enlaces div a {
+        font-size: 33px;
+    }
+}

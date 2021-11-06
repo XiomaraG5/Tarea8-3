@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    background-image: url(../imagenes/ImgPrin.gif);
+    background-size: 33.2%;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-position-y: 7% ;
+    position: relative;
+}
+.container {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "header header header"
+                         "titulo titulo titulo"
+                         "card-1 card-2 card-3"
+                         "card-4 card-5 card-6"
+                         "footer footer footer";
+}
+#caja-header {
+    background: linear-gradient(to right, #24FE41, #FDFC47); 
+    height: 50px;
+    width: 100%;
+    grid-area: header;
+    position: fixed;
+    z-index: 10;
+}
+#caja-header nav{
+    width: 20%;
+    height: 50px;
+    padding-left: 3%;
+    display: flex;
+    justify-content: flex-start;
+    animation: titulo 700ms linear ;
+}
+
+#caja-header nav a{
+    color: #fff;
+    text-decoration: none;
+    height: fit-content;
+    margin-top: 3%;
+    margin-left: 2%;
+    display: inline-block;
+    padding: 3%;
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color: #ccc3;
+}
+#caja-header nav a:hover {
+    border: 1px solid #fff;
+}
+.titulo {
+    grid-area: titulo;
+    margin-top: 25%;
+    margin-bottom: 2%;
+    padding: 1%;
+    text-align: center;
+    font-family: 'Wallpoet', cursive;
+    font-size: 40px;
+    text-transform: uppercase;
+    animation: titulo 700ms linear ;
+}
+.cards {
+    padding-top: 3%;
+    display: flex;
+    height: auto;
+    text-align: justify;
+    padding: 1%;
+}
+.card-1 {
+    grid-area: card-1;
+    margin-left: 5%;
+    animation: moverarriba 400ms linear;
+}
+
+.card-2 {
+    background-image: url(../imagenes/tortuga1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -200px;
+    grid-area: card-2;
+    animation: moverderecha 400ms linear ;
+}
+.card-3 {
+    grid-area: card-3;
+    gap: 1%;
+    flex-wrap: wrap;
+    padding: 1%;
+    margin-right: 5%;
+    animation: moverderecha 400ms linear ;
+}
+.card-4 {
+    grid-area: card-4; 
+    margin-left: 5%;
+    animation: moverarriba 400ms linear;
+}
+.card-5 {
+    grid-area: card-5;
+    margin-bottom: 20px;
+    animation: moverderecha 400ms linear;
+}
+.card-6 {
+    grid-area: card-6;
+    background-image: url(../imagenes/tortuga2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -650px;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    animation: moverderecha 400ms linear;
+}
+.arriba  {
+    position: absolute;
+    bottom: 25px;
+    left: 10px;
+    
+}
+.arriba a {
+    color: #24FE41;
+}
+.arriba a:visited {
+    color: #24FE41;
+}
+.arriba:hover{
+    transform: scale(1.2,1.2);
+}
+footer {
+    grid-area: footer;
+    text-align: center;
+    background: linear-gradient(to right, #24FE41, #FDFC47); 
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+@keyframes moverderecha{
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    
+    100%{
+        opacity:1;
+        transform: translate(0);
+    }
+}
+@keyframes moverarriba {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes titulo {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+@media screen and (max-width:1000px) {
+    body {
+        background-position-y: 3%;
+    }
+    .container {
+    grid-template-areas: "header header header"
+    "titulo titulo titulo"
+    "card-1 card-1 card-1"
+    "card-2 card-2 card-2"
+    "card-3 card-3 card-3"
+    "card-4 card-4 card-4"
+    "card-5 card-5 card-5"
+    "card-6 card-6 card-6"
+    "footer footer footer";
+    }
+    .card-2,
+    .card-6 {
+        height: 350px;
+        background-position: center;
+    }
+    .card-1, .card-4{
+        margin-left: 0px;
+    }
+    .card-3, .card-6 {
+        margin-right: 0px;
+    }
+    .card-6 {
+        margin-bottom: 8%;
+    }
+}
+@media screen and (max-width:650px) {
+    .titulo {
+        margin-top: 33%;
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 400px) {
+    body {
+        background-position-y: 2%;
+    }
+    .titulo {
+        margin-top: 35%;
+        font-size: 25px;
+    }
+    .card-6 {
+        background-position-x: 70%;
+    }
+}

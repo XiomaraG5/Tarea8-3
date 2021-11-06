@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    background-image: url(../imagenes/ImgPrin.gif);
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+#caja-header {
+    background: linear-gradient(to right, #24FE41, #FDFC47); 
+    height: 50px;
+    width: 100%;
+    z-index: 10;
+}
+#caja-header nav{
+    width: 20%;
+    height: 50px;
+    padding-left: 3%;
+    display: flex;
+    justify-content: flex-start;
+    animation: titulo 700ms linear ;
+}
+
+#caja-header nav a{
+    color: #fff;
+    text-decoration: none;
+    height: fit-content;
+    margin-top: 3%;
+    margin-left: 2%;
+    display: inline-block;
+    padding: 3%;
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color: #ccc3;
+}
+#caja-header nav a:hover {
+    border: 1px solid #fff;
+}
+.formulario {
+    width: 60%;
+    height: 400px;
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1%;
+}
+.formulario h1 {
+    flex-basis: 100%;
+    height: fit-content;
+    margin-top: 2%;
+    padding: 1%;
+    text-align: center;
+    font-family: 'Wallpoet', cursive;
+    font-size: 40px;
+    text-transform: uppercase;
+    animation: titulo 700ms linear ;
+}
+.formulario input[name="nombre"], .formulario input[name="email"] {
+    width: 49%;
+    height: 25px;
+    background: #4447;
+    padding: 1%;
+    outline: none;  
+    border: none;
+    border: 1px solid #24FE41;
+    color: #fff;
+}
+.formulario input[name="nombre"] {
+    
+    animation: derecha 700ms linear;
+}
+.formulario input[name="email"] {
+    margin-top: -2%;
+    animation: titulo 700ms linear ;
+}
+.formulario input[name="apellido"], .formulario input[name="telefono"] {
+    width: 49%;
+    height: 25px;
+    margin-left: 1%;
+    background: #4447;
+    outline: none;  
+    padding: 1%;
+    border: none;
+    border: 1px solid #24FE41;
+    color: #fff;
+}
+.formulario input[name="apellido"] {
+    
+    animation: derecha 700ms linear;
+}
+.formulario input[name="telefono"] {
+    margin-top: -2%;
+    animation: titulo 700ms linear ;
+}
+.formulario input[name="direccion"], textarea {
+    flex-basis: 100%;
+    background: #4447;
+    outline: none;    
+    border: none;
+    padding: 1%;
+    border: 1px solid #24FE41;
+    color: #fff;
+}
+input::placeholder, textarea::placeholder {
+    color: white;
+}
+textarea {
+    
+    animation: titulo 700ms linear ;
+}
+.formulario input[name="direccion"] {
+    margin-top: -2%;
+    margin-bottom: 2%;
+    animation: derecha 700ms linear;
+}
+button{
+    flex-basis: 25%;
+    height: 30px;
+    margin: auto;
+    background: linear-gradient(to right, #24FE41, #FDFC47);
+    outline: none;  
+    border: none;
+    border: 1px solid #24FE41;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 18px;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 1px #444, 0px 0px 2px #444;
+    font-family: 'Wallpoet', cursive;
+    animation: derecha 700ms linear;
+}
+button:hover {
+    transform: scale(1.2,1.2);
+    border: 1px solid white;
+}
+footer {
+    text-align: center;
+    background: linear-gradient(to right, #24FE41, #FDFC47); 
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+@keyframes titulo {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+@keyframes derecha {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@media screen and (max-width:800px) {
+    body {
+        background-position-y:50% ;
+    }
+    .formulario {
+        width: 80%;
+    }
+    
+}
+@media screen and (max-width:450px) {
+    .formulario {
+        width: 90%;
+    }
+    .formulario h1 {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    background-image: url(../imagenes/ImgPrin.gif);
+    background-size: 33.2%;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-position-y: 7% ;
+    position: relative;
+    padding-bottom: 70px;
+}
+
+.container {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "header header header"
+                         "titulo titulo titulo"
+                         "card-1 card-2 card-3"
+                         "card-4 card-5 card-6"
+                         "footer footer footer";
+}
+#caja-header {
+    background: linear-gradient(to right, #24FE41, #FDFC47); 
+    height: 50px;
+    width: 100%;
+    grid-area: header;
+    position: fixed;
+    z-index: 10;
+}
+#caja-header nav{
+    width: 20%;
+    height: 50px;
+    padding-left: 3%;
+    display: flex;
+    justify-content: flex-start;
+    animation: titulo 700ms linear ;
+}
+
+#caja-header nav a{
+    color: #fff;
+    text-decoration: none;
+    height: fit-content;
+    margin-top: 3%;
+    margin-left: 2%;
+    display: inline-block;
+    padding: 3%;
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color: #ccc3;
+}
+#caja-header nav a:hover {
+    border: 1px solid #fff;
+}
+.titulo {
+    grid-area: titulo;
+    margin-top: 25%;
+    margin-bottom: 2%;
+    padding: 1%;
+    text-align: center;
+    font-family: 'Wallpoet', cursive;
+    font-size: 40px;
+    text-transform: uppercase;
+    animation: titulo 700ms linear ;
+}
+.card {
+    padding-top: 3%;
+    display: flex;
+    height: auto;
+}
+.card p {
+    align-self: center;
+    margin-bottom: 2%;
+}
+.containerd-card-1 {
+    background-image: url(../imagenes/cocodrilo1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -40px;
+    grid-area: card-1;
+    margin-left: 2%;
+    animation: moverarriba 400ms linear;
+}
+.containerd-card-2 {
+    grid-area: card-2;
+    padding-left: 5%;
+    padding-right: 5%;
+    animation: moverderecha 400ms linear;
+}
+.containerd-card-3 {
+    grid-area: card-3;
+    background-image: url(../imagenes/cocodrilo3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 65%;
+    animation: moverderecha 400ms linear ;
+}
+.containerd-card-3 dl {
+    width: 100%;
+}
+dt {
+    font-weight: bolder;
+}
+.containerd-card-4{
+    grid-area: card-4;
+    margin-left: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    animation: moverarriba 400ms linear;
+}
+.containerd-card-5{
+    grid-area: card-5;
+    background-image: url(../imagenes/cocodrilo2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -250px;
+    animation: moverderecha 400ms linear;
+}
+
+.containerd-card-5 dl{
+    width: 100%;
+}
+.containerd-card-6{
+    grid-area: card-6;
+    padding: 1%;
+    margin-top: 4%;
+    animation: moverderecha 400ms linear;
+}
+.containerd-card-6 dl {
+    display: flex;
+    flex-wrap: wrap;
+    gap:5%;
+}
+.containerd-card-6 dl div {
+    flex-basis: 45%;
+    margin-bottom: 3%;
+}
+.arriba  {
+    position: absolute;
+    bottom: 25px;
+    left: 10px;
+    
+}
+.arriba a {
+    color: #24FE41;
+}
+.arriba a:visited {
+    color: #24FE41;
+}
+.arriba:hover{
+    transform: scale(1.2,1.2);
+    
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    background: linear-gradient(to right, #24FE41, #FDFC47); 
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+
+@keyframes moverderecha{
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    
+    100%{
+        opacity:1;
+        transform: translate(0);
+    }
+}
+@keyframes moverarriba {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes titulo {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+@media  screen and (max-width: 1000px) {
+    body {
+        background-position-y: 3%;
+    }
+    
+    #header nav {
+        width: 100%;
+    }
+    #header nav a {
+        font-size: 20px;
+        padding: 1%;
+    }
+    .container{
+    grid-template-areas: "header header header"
+    "titulo titulo titulo"
+    "card-1 card-1 card-1"
+    "card-2 card-2 card-2"
+    "card-3 card-3 card-3"
+    "card-4 card-4 card-4"
+    "card-5 card-5 card-5"
+    "card-6 card-6 card-6"
+    "footer footer footer";
+    }
+    .titulo {
+        margin-top: 30%;
+    }
+    .containerd-card-1,
+    .containerd-card-3,
+    .containerd-card-5 {
+        height: 300px;
+        background-position: center;
+    }
+    .containerd-card-1 {
+        margin-left: 0px;
+        grid-area: card-1;
+    }
+    .containerd-card-6 {
+        margin-bottom: 5%;
+    }
+}
+@media screen and (max-width:450px) {
+    .titulo{
+        font-size: 30px;
+        margin-top: 35%;
+    }
+    .containerd-card-1, .containerd-card-5 {
+        background-position-y: -20%;
+    }
+    .containerd-card-6 {
+        margin-bottom: 8%;
+    }
+}
